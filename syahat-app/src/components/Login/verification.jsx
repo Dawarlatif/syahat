@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import lock from './../../assets/lock.png'
+import { Authenticator1 } from '../modals/authenticator-prompt'
 const Verification = () => {
+ const [open, setOpen] =useState(false)
   return (
+    
     <div className=' rounded-xl md:w-3/4 w-5/6 flex-col flex md:flex-row  bg-white px-4 py-6 md:p-4 divide-y-2 md:divide-x-2 '>
+        
     <div className='w-full md:w-1/2  flex flex-wrap flex-col mx-auto md:mx-4 justify-center '>
     <div className=' w-full border items-center text-center mx-auto rounded-xl px-1 md:px-2 2xl:px-4 text-gray-500 font-normal text sm'>
         <h1 className='text-center text-[#558F69] text-xl md:text-2xl py-4 font-semibold'>Security Verification</h1>
@@ -32,7 +36,8 @@ const Verification = () => {
                 >
             Submit
                 </button>
-                <p className='text-sm  text-gray-600 pb-4'>Lost Google Authenticator?<span className='cursor-pointer  text-green-600'>Click Here</span></p>
+                <p className='text-sm  text-gray-600 pb-4'>Lost Google Authenticator?<span className='cursor-pointer  text-green-600' onClick={()=>setOpen(!open)}>Click Here</span></p>
+ 
     </div>
     </div>
   
@@ -40,7 +45,9 @@ const Verification = () => {
     <div className='w-full md:w-1/2 flex items-center flex-col mx-auto border-t-white p-8 flex-wrap justify-around'>
         <img   src={lock} width='600px' height='100%' alt='travel'/>
     </div>
+ 
 </div>
+
   )
 }
 
