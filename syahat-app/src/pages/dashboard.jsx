@@ -233,28 +233,34 @@ const Dashboard = () => {
               Dashboard
             </h1>
           </div>
-          <div className="bg-gray-50 rounded-md px-2 py-4 border flex items-center justify-center my-1">
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-2 bg-gray-50 rounded-md px-2 py-4 border flex  my-1 min-h-[150px]">
             {array2.map((item, index) => (
-              <div className="flex flex-wrap mx-auto w-1/4 p-1" key={index}>
+              <div
+                className="sm:col-span-12 md:col-span-4 lg:col-span-3  p-2 h-full"
+                key={index}
+              >
                 <div
-                  className={`rounded-lg text-white flex flex-col w-full py-2 divide-y ${item.bgColor}`}
+                  className={`rounded-lg text-white flex flex-col w-full py-1 divide-y ${item.bgColor} h-full`}
                 >
-                  <div className=" h-2/5 px-1 py-1">
-                    <h1 className="font-semibold text-lg text-center mb-4 ">
+                  <div className=" min-h-[70px]  py-1 flex justify-center items-center">
+                    <h1 className="font-semibold text-lg text-center  ">
                       {item.name}
                     </h1>
                   </div>
-                  <div className="flex flex-wrap items-center justify-center h-4/6 text-3xl font-bold">
-                    <span className="mx-2 rounded-full border-2 text-white w-9 h-9"></span>
+                  <div className="flex  items-center justify-center min-h-[80px] text-3xl font-bold py-1">
+                    <span className="mx-2 rounded-full border-2 text-white text-bold w-9 h-9"></span>
                     {item.count}
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="bg-gray-50 rounded-md px-2 py-4 border flex items-center justify-center my-1">
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-2 bg-gray-50 rounded-md px-2 py-4 border flex items-center justify-center my-1">
             {array3.map((item, index) => (
-              <div className="mx-auto w-1/3 px-1 " key={index}>
+              <div
+                className=" sm:col-span-12 md:col-span-6 lg:col-span-4"
+                key={index}
+              >
                 <div className="bg-white text-green-700 py-2 border rounded-md  divide-y">
                   <div className="h-2/6 flex flex-wrap items-center">
                     <div className="flex flex-col w-10/12 pl-2 pt-1 pb-2">
@@ -279,13 +285,16 @@ const Dashboard = () => {
               </div>
             ))}
           </div>
-          <div className="bg-gray-50 rounded-md px-2 flex-col flex py-4 border my-1">
+          <div className=" bg-gray-50 rounded-md px-2 flex-col flex py-4 border my-1">
             <h1 className="text-xl font-semibold pl-2 pb-2  text-green-700">
               Your Earnings
             </h1>
-            <div className=" flex items-center justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-2 flex items-center justify-center">
               {array4.map((item, index) => (
-                <div className="mx-auto w-1/3 px-1 " key={index}>
+                <div
+                  className="sm:col-span-12 md:col-span-6 lg:col-span-4"
+                  key={index}
+                >
                   <div className="bg-white text-green-700 py-2 border rounded-md  divide-y">
                     <div className="h-2/6 flex flex-wrap items-center">
                       <div className="flex flex-col w-10/12 pl-2 pt-1 pb-2">
@@ -352,10 +361,10 @@ const Dashboard = () => {
                     key={index}
                   >
                     <div className="w-4/5 flex">
-                      <div className="w-1/5 flex items-center justify-center">
-                        <div className="">{item.icon}</div>
+                      <div className="w-3/12 flex items-center justify-center">
+                        {item.icon}
                       </div>
-                      <div className="w-4/5">
+                      <div className="w-9/12">
                         <h1 className="text-md  font-semibold">{item.name}</h1>
                         <p className="text-sm text-gray-500">{item.msg}</p>
                       </div>
